@@ -15,7 +15,7 @@ kernel by mapping inputs and output-specific latent variables into an embedding 
 ## Environment Setup
 The required packages are listed in requirement.yml. Users can recreate the environment by running
 ```
-conda env create -f requirement.yml
+conda env create -f requirement.yaml
 ```
 
 ## Code Structure
