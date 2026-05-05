@@ -3,13 +3,22 @@ This repository contains the official PyTorch implementation for the ICML 2026 p
 kernel by mapping inputs and output-specific latent variables into an embedding space using a Lipschitz-regularised neural network. Combined with stochastic variational inference, our model effectively scales to high-dimensional output settings.
 <table>
   <tr>
-    <td align="center" width="50%">
-      <img src="assets/model_overview.png" alt="Overview of T-LVMOGP" width="300"><br>
-      <sub>Overview of T-LVMOGP</sub>
+    <td align="center" width="40%">
+      <img src="assets/model_overview.png" alt="Overview of T-LVMOGP" width="350"><br>
     </td>
-    <td align="center" width="50%">
-      <img src="assets/rcnn_illustration.png" alt="Illustration of RCNN" width="300"><br>
-      <sub>Illustration of RCNN</sub>
+    <td align="center" width="60%">
+      <img src="assets/rcnn_illustration.png" alt="Illustration of RCNN" width="450"><br>
     </td>
   </tr>
 </table>
+
+## Environment Setup
+The required packages are listed in environment.yml. Users can recreate the environment by running
+```
+conda env create -f environment.yml
+```
+
+## Code Structure
+The core Python implementation of T-LVMOGP is provided in the `models/` directory. In particular, the `models/building_blocks/` subdirectory contains the fundamental Gaussian process and neural network components. The script `dkl_lvmogp_base.py` defines the base T-LVMOGP model, which is reused across different experimental settings, while experiment-specific files, such as `dkl_lvmogp_eeg.py`, implement variants tailored to particular datasets or tasks.
+
+The implementations of the baseline models are provided in the `baselines/` directory, with experiment-specific baseline scripts organised under `experiments/`. Likelihood modules, including the Gaussian likelihood and the (zero-inflated) negative binomial likelihood, are implemented in `likelihood/`. Kernel functions are implemented in `kernels/`, and general utility functions used throughout the repository are collected in `utils/`.
