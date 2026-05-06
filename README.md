@@ -23,6 +23,9 @@ The core Python implementation of T-LVMOGP is provided in the `models/` director
 
 The implementations of the baseline models are provided in the `baselines/` directory, with experiment-specific baseline scripts organised under `experiments/`. Likelihood modules, including the Gaussian likelihood and the (zero-inflated) negative binomial likelihood, are implemented in `likelihood/`. Kernel functions are implemented in `kernels/`, and general utility functions used throughout the repository are collected in `utils/`.
 
+## Data
+The processed datasets for EEG, SARCOS, ERA5, and Copernicus Marine experiments are collected under the `data/` directory. For the  Spatial Transcriptomics experiment, the dataset can be downloaded by running `prepare_invasive_prostate_visium_data.sh` and processed by `st_invasive_prostate_visium.ipynb`.
+
 ## Baseline Implementations
 
 The following table provides links to the official implementations of baseline multi-output Gaussian process models.
